@@ -9,8 +9,11 @@ driver.get('https://www.google.com/')
 
 # Find search box
 searchForm = driver.find_element_by_name('q')
-# Send search
+
+# type in what you want to search
 searchForm.send_keys('puppies')
-time.sleep()
+time.sleep(2)
+
+#search
 searchForm.submit()
 time.sleep(5)
