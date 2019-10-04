@@ -1,9 +1,16 @@
 import os
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 import time
 
 # Using Chrome to access web
-driver = webdriver.Chrome('C:/Users/kehlsey.lewis/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/selenium/webdriver/chrome/chromedriver.exe')
+#driver = webdriver.Chrome('C:/Users/kehlsey.lewis/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/selenium/webdriver/chrome/chromedriver.exe')
+
+chromeOptions = Options()
+chromeOptions.add_argument("--kiosk")
+driver = webdriver.Chrome(options=chromeOptions) #Would like chrome to start in fullscreen
+
+
 # go to website
 driver.get('https://www.google.com/')
 
@@ -17,3 +24,4 @@ time.sleep(2)
 #search
 searchForm.submit()
 time.sleep(5)
+driver.quit()
